@@ -10,11 +10,11 @@ const router=express.Router();
 
 router.get("/signin",(req,res)=>{
 
-    res.render("signin");
+   return res.render("signin");
 })
 router.get("/signup",(req,res)=>{
 
-    res.render("signup");
+   return res.render("signup");
 })
 router.post("/signup",async(req,res)=>{
 
@@ -54,7 +54,7 @@ router.post("/signin",async(req,res)=>{
 
     const token=generatetoken(finduser);
     // console.log("token",token);
-    
+
     return res.cookie("token",token).redirect("/");
 
 })

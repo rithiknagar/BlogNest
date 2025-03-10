@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
 
       const nameoffile = `${Date.now()}-${file.originalname}`;
       cb(null,nameoffile)
-      
+
     }
 
   });
@@ -88,7 +88,7 @@ router.post("/",upload.single("coverImage"),async(req,res)=>{
 
     console.log("curblog",curblog);
 
-    res.redirect(`/blog/${curblog._id}`)
+    return res.redirect(`/blog/${curblog._id}`)
 })
 
 module.exports=router;
