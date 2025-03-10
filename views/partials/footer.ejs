@@ -1,0 +1,71 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        } 
+        .content {
+            flex: 1; 
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .footer a {
+            color: white;
+            margin-right: 10px;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+        .footer a:hover {
+            color: #f8b400;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+       
+    </div>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <div class="row">          
+                <div class="col-md-4">
+                    <h5>BlogNest</h5>
+                    <p>📖 <strong>BlogNest</strong> – A platform to share ideas, stories, and insights with the world.</p>
+                    <p>Explore blogs, share your thoughts, and connect with like-minded individuals.</p>
+                    <p>Created By - Rithik Nagar</p>
+                </div>      
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/add-blog">Add Blog</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <a href="https://www.facebook.com/login/" class="me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="https://x.com/i/flow/login" class="me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="https://www.instagram.com/rithiknagar2910" class="me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="https://www.linkedin.com/in/rithiknagar123/" class="me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="https://github.com/rithiknagar" class="me-3"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="https://youtube.com"><i class="fab fa-youtube fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="border-light">
+            <p class="mb-0">&copy; <span id="year"></span> BlogNest. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>

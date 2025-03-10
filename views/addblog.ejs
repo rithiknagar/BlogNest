@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head.ejs") %>
+    <title>Add New Blog</title>
+    <style>
+        .btn-submit {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 8px;
+            width: 100%;
+            transition: background 0.3s ease-in-out;
+        }
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <%- include("./partials/nav.ejs") %>  
+     <div class="container mt-5">
+        <div class="card p-4 shadow-lg">
+            <h2 class="mb-4 text-center">Submit Your Post</h2>
+            <form action="/blog" method="POST" enctype="multipart/form-data" >            
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" id="title" name="title" class="form-control" required>
+                </div>               
+                <div class="mb-3">
+                    <label for="coverImage" class="form-label">Cover Image</label>
+                    <input type="file" id="coverImage" name="coverImage" class="form-control" accept="image/*" required>
+                </div>               
+               <div class="mb-3">
+                    <label for="body" class="form-label">Body</label>
+                    <textarea id="body" name="body" class="form-control" rows="5" required></textarea>
+                </div>               
+                <button type="submit" class="btn btn-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <%- include("./partials/script.ejs") %>
+</body>
+</html>

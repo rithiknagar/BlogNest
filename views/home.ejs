@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head.ejs") %>
+    <title>Home Page</title>
+    <style>
+      .card {
+        transition: all 0.4s ease-in-out;
+        border-radius: 10px;
+        overflow: hidden;
+    } 
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+        filter: brightness(1.1);
+    }
+    .card img {
+        transition: transform 0.4s ease-in-out;
+    }
+    .card:hover img {
+        transform: scale(1.1);
+    }
+    </style>
+</head>
+<body>
+    <%- include("./partials/nav.ejs") %>  
+    <div class="container mt-3">
+      <% if (blogs.length > 0) { %>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <% blogs.forEach(blog => { %>
+            <div class="col">
+                <div class="card">
+                    <img src="<%= blog.coverImageURL %>" class="card-img-top" alt="Blog Image">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= blog.title %></h5>
+                      <p class="card-text"></p>
+                      <a href="/blog/<%= blog._id %>" class="btn btn-primary">View</a>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+      </div>
+      <% } else { %>
+        <p class="text-center">No blogs available. Be the first to write one!</p>
+    <% } %>
+    </div>
+    <%- include("./partials/footer.ejs") %>
+    <%- include("./partials/script.ejs") %>
+</body>
+</html>
