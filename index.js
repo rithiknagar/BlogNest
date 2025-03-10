@@ -22,7 +22,8 @@ app.set("views", path.resolve("./views"));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieparser());
 app.use(checkforauthentication("token"));
-app.use(express.static(path.resolve("./public")));
+app.use(express.static(path.join(__dirname, "public")));
+
 
 connecttomongodb(process.env.MONGO_URL)
   .then(() => console.log("MongoDB connected successfully"))
@@ -32,7 +33,7 @@ connecttomongodb(process.env.MONGO_URL)
 
 app.get("/", async (req, res) => {
   try {
-    const allblogs = await blog.find({}).sort({ createdAt: 1 });
+    const allblogs = await blog.find({});
    return res.render("home", { user: req.user, blogs: allblogs });
   } catch (error) {
     console.error("Error fetching blogs:", error);
